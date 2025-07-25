@@ -1,0 +1,24 @@
+# Install packages if you don't have them
+install.packages(c("sf", "ggplot2"))
+
+
+# Load libraries
+library(sf)
+library(ggplot2)
+
+# Example: Load some built-in data
+nc <- st_read(system.file("shape/nc.shp", package = "sf"))
+
+# Plot
+ggplot(data = nc) +
+  geom_sf() +
+  theme_minimal()
+
+
+
+my_shape=st_read("C:/Users/hp/Documents/Practice for R/bgd_adm_bbs_20201113_SHP/bgd_admbnda_adm0_bbs_20201113.shp")
+
+ggplot(data=my_shape) +
+  geom_sf(fill="lightblue", color="black") +
+  theme_minimal() +
+  ggtitle("Bangladesh")
